@@ -73,7 +73,9 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
               {Object.entries(customer.sherwani || {}).map(([key, value]) => (
                 <Table.Tr key={key}>
                   <Table.Td>
-                    <Text c="dark.9">{key.replace(/([A-Z])/g, " $1").trim()}</Text>
+                    <Text c="dark.9">
+                      {key.replace(/([A-Z])/g, " $1").trim()}
+                    </Text>
                   </Table.Td>
                   <Table.Td>
                     <Text c="dark.9">{value || "-"}</Text>
@@ -99,7 +101,9 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
               {Object.entries(customer.coat || {}).map(([key, value]) => (
                 <Table.Tr key={key}>
                   <Table.Td>
-                    <Text c="dark.9">{key.replace(/([A-Z])/g, " $1").trim()}</Text>
+                    <Text c="dark.9">
+                      {key.replace(/([A-Z])/g, " $1").trim()}
+                    </Text>
                   </Table.Td>
                   <Table.Td>
                     <Text c="dark.9">{value || "-"}</Text>
@@ -125,7 +129,9 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
               {Object.entries(customer.kurta || {}).map(([key, value]) => (
                 <Table.Tr key={key}>
                   <Table.Td>
-                    <Text c="dark.9">{key.replace(/([A-Z])/g, " $1").trim()}</Text>
+                    <Text c="dark.9">
+                      {key.replace(/([A-Z])/g, " $1").trim()}
+                    </Text>
                   </Table.Td>
                   <Table.Td>
                     <Text c="dark.9">{value || "-"}</Text>
@@ -151,7 +157,9 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
               {Object.entries(customer.trouser || {}).map(([key, value]) => (
                 <Table.Tr key={key}>
                   <Table.Td>
-                    <Text c="dark.9">{key.replace(/([A-Z])/g, " $1").trim()}</Text>
+                    <Text c="dark.9">
+                      {key.replace(/([A-Z])/g, " $1").trim()}
+                    </Text>
                   </Table.Td>
                   <Table.Td>
                     <Text c="dark.9">{value || "-"}</Text>
@@ -177,7 +185,37 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
               {Object.entries(customer.pant || {}).map(([key, value]) => (
                 <Table.Tr key={key}>
                   <Table.Td>
-                    <Text c="dark.9">{key.replace(/([A-Z])/g, " $1").trim()}</Text>
+                    <Text c="dark.9">
+                      {key.replace(/([A-Z])/g, " $1").trim()}
+                    </Text>
+                  </Table.Td>
+                  <Table.Td>
+                    <Text c="dark.9">{value || "-"}</Text>
+                  </Table.Td>
+                </Table.Tr>
+              ))}
+            </Table.Tbody>
+          </Table>
+        </Paper>
+      </Grid.Col>
+
+      {/* Shirt Measurements */}
+      <Grid.Col span={6}>
+        <Paper p="xl">
+          <Group mb="xl" justify="center">
+            <IconShirt size={20} color="black" />
+            <Title order={2} c="dark.9" fw={600}>
+              Shirt Measurements
+            </Title>
+          </Group>
+          <Table striped highlightOnHover withTableBorder withColumnBorders>
+            <Table.Tbody>
+              {Object.entries(customer.shirt || {}).map(([key, value]) => (
+                <Table.Tr key={key}>
+                  <Table.Td>
+                    <Text c="dark.9">
+                      {key.replace(/([A-Z])/g, " $1").trim()}
+                    </Text>
                   </Table.Td>
                   <Table.Td>
                     <Text c="dark.9">{value || "-"}</Text>

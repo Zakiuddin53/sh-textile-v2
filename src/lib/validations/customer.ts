@@ -1,6 +1,5 @@
 import { z } from "zod";
 
-// Helper function for measurement validation
 const measurementString = () =>
   z
     .string()
@@ -25,15 +24,12 @@ const sherwaniMeasurementSchema = z.object({
 const kurtaMeasurementSchema = z.object({
   length: measurementString(),
   chest: measurementString(),
-  blowChest: measurementString(),
   waist: measurementString(),
   hip: measurementString(),
   sleeve: measurementString(),
   sleeveMohri: measurementString(),
   neck: measurementString(),
   shoulder: measurementString(),
-  cap: measurementString(),
-  fullHeight: measurementString(),
 });
 
 const trouserMeasurementSchema = z.object({
@@ -56,7 +52,6 @@ const coatMeasurementSchema = z.object({
   sleeveMohri: measurementString(),
   neck: measurementString(),
   shoulder: measurementString(),
-  cap: measurementString(),
   fullHeight: measurementString(),
 });
 
@@ -65,8 +60,18 @@ const pantMeasurementSchema = z.object({
   waist: measurementString(),
   thigh: measurementString(),
   bottom: measurementString(),
-  calf: measurementString(),
   hip: measurementString(),
+});
+
+const shirtMeasurementSchema = z.object({
+  length: measurementString(),
+  chest: measurementString(),
+  waist: measurementString(),
+  hip: measurementString(),
+  sleeve: measurementString(),
+  sleeveMohri: measurementString(),
+  neck: measurementString(),
+  shoulder: measurementString(),
 });
 
 export const customerSchema = z.object({
@@ -79,6 +84,7 @@ export const customerSchema = z.object({
   trouser: trouserMeasurementSchema.optional().default({}),
   coat: coatMeasurementSchema.optional().default({}),
   pant: pantMeasurementSchema.optional().default({}),
+  shirt: shirtMeasurementSchema.optional().default({}),
 });
 
 export type CustomerSchemaType = z.infer<typeof customerSchema>;
