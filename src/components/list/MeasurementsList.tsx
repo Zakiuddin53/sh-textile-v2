@@ -6,18 +6,25 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { MeasurementsListProps } from "@/interfaces/measurement";
+
 export default function MeasurementsList({
   measurements,
   total,
   page,
+  search,
 }: MeasurementsListProps) {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const ITEMS_PER_PAGE = 10;
+  const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
 
   const handlePageChange = (newPage: number) => {
     const params = new URLSearchParams(searchParams);
     params.set("page", newPage.toString());
+    if (search) {
+      params.set("search", search);
+    }
     router.push(`${pathname}?${params.toString()}`);
   };
 
@@ -78,12 +85,14 @@ export default function MeasurementsList({
             </Table.Tbody>
           </Table>
 
-          {total > 10 && (
-            <Group justify="center">
+          {totalPages > 1 && (
+            <Group justify="center" mt="xl">
               <Pagination
-                total={Math.ceil(total / 10)}
+                total={totalPages}
                 value={page}
                 onChange={handlePageChange}
+                radius="md"
+                withEdges
               />
             </Group>
           )}

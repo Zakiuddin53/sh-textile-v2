@@ -71,7 +71,19 @@ export async function updateCustomer(
 
 function handleError(error: unknown, context: string): ApiResponse<never> {
   console.error(`${context}:`, error);
-  if (error && typeof error === "object") {
+
+  if (!error) {
+    return {
+      success: false,
+      error: {
+        code: "UNKNOWN_ERROR",
+        message: context || "An unknown error occurred",
+        details: null,
+      },
+    };
+  }
+
+  if (typeof error === "object") {
     if ("name" in error && error.name === "ZodError") {
       return {
         success: false,
@@ -93,6 +105,7 @@ function handleError(error: unknown, context: string): ApiResponse<never> {
       };
     }
   }
+
   return {
     success: false,
     error: {
