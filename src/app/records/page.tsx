@@ -32,22 +32,15 @@ export default async function RecordsPage({ searchParams }: Props) {
       <MainLayout title="Measurement Records">
         <MainLayout.Header>
           <Group justify="space-between">
-            <Link href="/measurements/new">
-              <Button leftSection={<IconPlus size={16} />}>
-                New Measurement
-              </Button>
+            <Link href="/">
+              <Button leftSection={<IconPlus size={16} />}>New Measurement</Button>
             </Link>
             <SearchInput defaultValue={search} />
           </Group>
         </MainLayout.Header>
 
         <MainLayout.Content>
-          <MeasurementsList
-            measurements={measurements}
-            total={total}
-            page={page}
-            search={search}
-          />
+          <MeasurementsList measurements={measurements} total={total} page={page} search={search} />
         </MainLayout.Content>
       </MainLayout>
     </Container>
