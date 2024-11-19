@@ -126,6 +126,9 @@ export default function ClientMeasurementForm() {
           <Title order={4} c="gray.9" mb="md">
             Upper Wear Measurements
           </Title>
+          <Title order={1} c="gray.7" mb="sm" fz="sm" fw="lighter">
+            Sherwani • Kurta • Coat • Shirt
+          </Title>
           <Tabs defaultValue="sherwani">
             <Tabs.List>
               <Tabs.Tab c="blue" value="sherwani" leftSection={<IconShirt size={16} />}>
