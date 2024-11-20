@@ -6,7 +6,7 @@ export class CustomerService {
   static async findMany(skip: number, take: number, where = {}) {
     return await prisma.customer.findMany({
       where,
-      orderBy: { createdAt: "desc" },
+      orderBy: { createdAt: "asc" },
       skip,
       take,
       select: {
