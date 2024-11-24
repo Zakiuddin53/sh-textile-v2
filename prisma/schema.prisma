@@ -21,10 +21,18 @@ model Customer {
   address       String
   sherwani      Json?    
   kurta         Json?    
-  coat          Json?    
-  trouser       Json?    
-  pant          Json?   
+  coat          Json?   
+  sadri         Json?    
   shirt         Json?   
+
+  trouser          Json?    
+  pant             Json? 
+  paejama          Json? 
+  choodidarPaejama Json? 
+  shalwar          Json? 
+  note             Json? 
+
+
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
 

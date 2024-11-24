@@ -1,7 +1,12 @@
 "use client";
 
 import { Grid, Group, Paper, Table, Text, Title } from "@mantine/core";
-import { IconPhone, IconMapPin, IconShirt } from "@tabler/icons-react";
+import {
+  IconPhone,
+  IconMapPin,
+  IconShirt,
+  IconJacket,
+} from "@tabler/icons-react";
 import { CustomerSchemaType } from "@/lib/validations/customer";
 
 interface MeasurementDetailsProps {
@@ -211,6 +216,34 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
           <Table striped highlightOnHover withTableBorder withColumnBorders>
             <Table.Tbody>
               {Object.entries(customer.shirt || {}).map(([key, value]) => (
+                <Table.Tr key={key}>
+                  <Table.Td>
+                    <Text c="dark.9">
+                      {key.replace(/([A-Z])/g, " $1").trim()}
+                    </Text>
+                  </Table.Td>
+                  <Table.Td>
+                    <Text c="dark.9">{value || "-"}</Text>
+                  </Table.Td>
+                </Table.Tr>
+              ))}
+            </Table.Tbody>
+          </Table>
+        </Paper>
+      </Grid.Col>
+
+      {/* Sadri Measurements */}
+      <Grid.Col span={6}>
+        <Paper p="xl">
+          <Group mb="xl" justify="center">
+            <IconJacket size={20} color="black" />
+            <Title order={2} c="dark.9" fw={600}>
+              Sadri Measurements
+            </Title>
+          </Group>
+          <Table striped highlightOnHover withTableBorder withColumnBorders>
+            <Table.Tbody>
+              {Object.entries(customer.sadri || {}).map(([key, value]) => (
                 <Table.Tr key={key}>
                   <Table.Td>
                     <Text c="dark.9">
