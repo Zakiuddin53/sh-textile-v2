@@ -1,12 +1,13 @@
 {
   "name": "sh-textile-v2",
-  "version": "0.1.0",
-  "private": true,
+  "productName": "sh-textile-v2",
+  "description": "My Electron application description",
+  "version": "1.0.0",
   "main": "main/index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node build.mjs && electron-forge package",
-    "start": "next start",
+    "build": "next build && node build.mjs && electron-forge make",
+    "start": "electron-forge start",
     "start:electron": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
@@ -53,5 +54,11 @@
     "@electron-forge/plugin-fuses": "^7.5.0",
     "@electron/fuses": "^1.8.0",
     "electron": "33.2.0"
-  }
+  },
+  "keywords": [],
+  "author": {
+    "name": "Mohd Ahmad",
+    "email": "61076339+MohdAhmad1@users.noreply.github.com"
+  },
+  "license": "MIT"
 }
