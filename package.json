@@ -6,7 +6,7 @@
   "main": "main/index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && node build.mjs && electron-forge make",
+    "build": "next build && node build.mjs",
     "start": "electron-forge start",
     "start:electron": "electron-forge start",
     "package": "electron-forge package",
