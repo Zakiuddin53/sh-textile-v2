@@ -45,6 +45,7 @@ export default async function MeasurementDetailsPage({ params }: Props) {
     paejama: safeParseJSON(customer.paejama),
     shalwar: safeParseJSON(customer.shalwar),
     choodidarPaejama: safeParseJSON(customer.choodidarPaejama),
+    note: safeParseJSON(customer.note),
   };
 
   return (
