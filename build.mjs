@@ -1,33 +1,35 @@
+// @ts-check
+
 import fs from "fs/promises";
 import fsExtra from "fs-extra";
 import path from "path";
 
-export async function build() {
-  await fsExtra.ensureDir("dist");
+const distDirLocation = path.join("main", "dist");
 
-  await fs.cp(path.join(".next", "standalone"), path.join("dist"), {
+export async function build() {
+  await fsExtra.ensureDir(distDirLocation);
+
+  await fs.cp(path.join(".next", "standalone"), distDirLocation, {
     recursive: true,
   });
 
   await fs.cp(
     path.join(".next", "static"),
-    path.join("dist", ".next", "static"),
+    path.join(distDirLocation, ".next", "static"),
     {
       recursive: true,
     }
   );
 
-  await fs.cp(path.join("public"), path.join("dist", "public"), {
+  await fs.cp(path.join("public"), path.join(distDirLocation, "public"), {
     recursive: true,
   });
 
-  await fsExtra.ensureFile(path.join("dist", "start.bat"));
-  await fsExtra.rm(path.join("dist", "start.bat"));
-
-  await fs.writeFile(
-    path.join("dist", "start.bat"),
-    `start node server.js \n start http://localhost:3000`
-  );
+  await fs.rm(path.join(distDirLocation, "node_modules"), {
+    recursive: true,
+    force: true,
+  });
+  await fs.rm(path.join(distDirLocation, "package.json"), { force: true });
 }
 
 build();
