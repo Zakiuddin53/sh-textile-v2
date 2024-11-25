@@ -1,4 +1,3 @@
-// Individual measurement interfaces for each garment type
 export interface SherwaniMeasurements {
   length?: string;
   chest?: string;
@@ -84,7 +83,32 @@ export interface SadriMeasurements {
   shoulder?: string;
 }
 
-// Main customer input interface
+export interface PaejamaMeasurements {
+  length?: string;
+  hip?: string;
+  waist?: string;
+  mohri?: string;
+}
+
+export interface ShalwarMeasurements {
+  length?: string;
+  hip?: string;
+  waist?: string;
+  mohri?: string;
+}
+
+export interface ChoodidarPaejamaMeasurements {
+  length?: string;
+  hip?: string;
+  aroundKnee?: string;
+  aroundCalf?: string;
+  mohri?: string;
+}
+
+export interface NoteMeasurements {
+  text?: string;
+}
+
 export interface CustomerInput {
   name: string;
   orderNumber: string;
@@ -97,4 +121,8 @@ export interface CustomerInput {
   pant?: PantMeasurements;
   shirt?: ShirtMeasurements;
   sadri?: SadriMeasurements;
+  paejama?: PaejamaMeasurements;
+  shalwar?: ShalwarMeasurements;
+  choodidarPaejama?: ChoodidarPaejamaMeasurements;
+  note?: NoteMeasurements;
 }

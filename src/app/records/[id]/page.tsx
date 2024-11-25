@@ -23,7 +23,6 @@ export default async function MeasurementDetailsPage({ params }: Props) {
 
   const customer = response.data;
 
-  // Helper function to safely parse JSON or return empty object
   const safeParseJSON = (data: unknown) => {
     if (!data) return {};
     if (typeof data === "object") return data;
@@ -43,6 +42,9 @@ export default async function MeasurementDetailsPage({ params }: Props) {
     trouser: safeParseJSON(customer.trouser),
     pant: safeParseJSON(customer.pant),
     shirt: safeParseJSON(customer.shirt),
+    paejama: safeParseJSON(customer.paejama),
+    shalwar: safeParseJSON(customer.shalwar),
+    choodidarPaejama: safeParseJSON(customer.choodidarPaejama),
   };
 
   return (

@@ -12,6 +12,7 @@ import {
   Tabs,
   Paper,
   Box,
+  Textarea,
 } from "@mantine/core";
 import { useForm, zodResolver } from "@mantine/form";
 import { notifications } from "@mantine/notifications";
@@ -39,6 +40,10 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
       pant: customer.pant || {},
       shirt: customer.shirt || {},
       sadri: customer.sadri || {},
+      paejama: customer.paejama || {},
+      shalwar: customer.shalwar || {},
+      choodidarPaejama: customer.choodidarPaejama || {},
+      note: customer.note || {},
     },
   });
 
@@ -68,6 +73,20 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
   return (
     <form onSubmit={form.onSubmit(handleSubmit)}>
       <Stack gap="xl">
+
+
+                {/* Notes Section */}
+                <Paper shadow="xs" p="md" withBorder>
+          <Title order={4} c="gray.9" mb="md">
+            Notes
+          </Title>
+          <Textarea
+            placeholder="Add any additional notes or special instructions"
+            minRows={3}
+            {...form.getInputProps("note.text")}
+            styles={{ input: { color: "black" } }}
+          />
+        </Paper>
         {/* Client Details Section */}
         <Paper shadow="xs" p="md" withBorder>
           <Title order={4} c="gray.9" mb="md">
@@ -105,10 +124,12 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
           </SimpleGrid>
         </Paper>
 
+
+
         {/* Upper Wear Measurements Section */}
         <Paper shadow="xs" p="md" withBorder>
           <Title order={4} c="gray.9" mb="md">
-            Upper Wear Measurements
+            Upper Wear Measurementss
           </Title>
           <Tabs defaultValue="sherwani">
             <Tabs.List>
@@ -476,103 +497,233 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
           <Title order={4} c="gray.9" mb="md">
             Lower Wear Measurements
           </Title>
-          <Stack gap="xl">
-            {/* Trouser Section */}
-            <div>
-              <Title order={5} c="gray.9" mb="md">
-                Trouser Measurements
-              </Title>
-              <SimpleGrid cols={3}>
-                <MeasurementInput
-                  c="black"
-                  label="Length"
-                  placeholder="Enter length"
-                  {...form.getInputProps("trouser.length")}
-                />
-                <MeasurementInput
-                  c="black"
-                  label="Mohri"
-                  placeholder="Enter mohri"
-                  {...form.getInputProps("trouser.mohri")}
-                />
-                <MeasurementInput
-                  c="black"
-                  label="Hip"
-                  placeholder="Enter hip"
-                  {...form.getInputProps("trouser.hip")}
-                />
-                <MeasurementInput
-                  c="black"
-                  label="Waist"
-                  placeholder="Enter waist"
-                  {...form.getInputProps("trouser.waist")}
-                />
-                <MeasurementInput
-                  c="black"
-                  label="Knee"
-                  placeholder="Enter knee"
-                  {...form.getInputProps("trouser.knee")}
-                />
-                <MeasurementInput
-                  c="black"
-                  label="Calf"
-                  placeholder="Enter calf"
-                  {...form.getInputProps("trouser.calf")}
-                />
-                <MeasurementInput
-                  c="black"
-                  label="Ankle"
-                  placeholder="Enter ankle"
-                  {...form.getInputProps("trouser.ankle")}
-                />
-              </SimpleGrid>
-            </div>
+          <Tabs defaultValue="trouser">
+            <Tabs.List>
+              <Tabs.Tab
+                c="blue"
+                value="trouser"
+                leftSection={<IconHanger size={16} />}
+              >
+                Trouser
+              </Tabs.Tab>
+              <Tabs.Tab
+                c="blue"
+                value="pant"
+                leftSection={<IconHanger size={16} />}
+              >
+                Pant
+              </Tabs.Tab>
+              <Tabs.Tab
+                c="blue"
+                value="paejama"
+                leftSection={<IconHanger size={16} />}
+              >
+                Paejama
+              </Tabs.Tab>
+              <Tabs.Tab
+                c="blue"
+                value="shalwar"
+                leftSection={<IconHanger size={16} />}
+              >
+                Shalwar
+              </Tabs.Tab>
+              <Tabs.Tab
+                c="blue"
+                value="choodidar"
+                leftSection={<IconHanger size={16} />}
+              >
+                Chooridar Paejama
+              </Tabs.Tab>
+            </Tabs.List>
 
-            {/* Pant Section */}
-            <div>
-              <Title order={5} c="gray.9" mb="md">
-                Pant Measurements
-              </Title>
-              <SimpleGrid cols={3}>
-                <MeasurementInput
-                  c="black"
-                  label="Length"
-                  placeholder="Enter length"
-                  {...form.getInputProps("pant.length")}
-                />
-                <MeasurementInput
-                  c="black"
-                  label="Waist"
-                  placeholder="Enter waist"
-                  {...form.getInputProps("pant.waist")}
-                />
-                <MeasurementInput
-                  c="black"
-                  label="Thigh"
-                  placeholder="Enter thigh"
-                  {...form.getInputProps("pant.thigh")}
-                />
-                <MeasurementInput
-                  c="black"
-                  label="Bottom"
-                  placeholder="Enter bottom"
-                  {...form.getInputProps("pant.bottom")}
-                />
-                <MeasurementInput
-                  c="black"
-                  label="Calf"
-                  placeholder="Enter calf"
-                  {...form.getInputProps("pant.calf")}
-                />
-                <MeasurementInput
-                  c="black"
-                  label="Hip"
-                  placeholder="Enter hip"
-                  {...form.getInputProps("pant.hip")}
-                />
-              </SimpleGrid>
-            </div>
-          </Stack>
+            <Box mt="md">
+              {/* Trouser Panel */}
+              <Tabs.Panel value="trouser">
+                <SimpleGrid cols={3}>
+                  <MeasurementInput
+                    c="black"
+                    label="Length"
+                    placeholder="Enter length"
+                    {...form.getInputProps("trouser.length")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Mohri"
+                    placeholder="Enter mohri"
+                    {...form.getInputProps("trouser.mohri")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Hip"
+                    placeholder="Enter hip"
+                    {...form.getInputProps("trouser.hip")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Waist"
+                    placeholder="Enter waist"
+                    {...form.getInputProps("trouser.waist")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Knee"
+                    placeholder="Enter knee"
+                    {...form.getInputProps("trouser.knee")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Calf"
+                    placeholder="Enter calf"
+                    {...form.getInputProps("trouser.calf")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Ankle"
+                    placeholder="Enter ankle"
+                    {...form.getInputProps("trouser.ankle")}
+                  />
+                </SimpleGrid>
+              </Tabs.Panel>
+
+              {/* Pant Panel */}
+              <Tabs.Panel value="pant">
+                <SimpleGrid cols={3}>
+                  <MeasurementInput
+                    c="black"
+                    label="Length"
+                    placeholder="Enter length"
+                    {...form.getInputProps("pant.length")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Waist"
+                    placeholder="Enter waist"
+                    {...form.getInputProps("pant.waist")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Thigh"
+                    placeholder="Enter thigh"
+                    {...form.getInputProps("pant.thigh")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Bottom"
+                    placeholder="Enter bottom"
+                    {...form.getInputProps("pant.bottom")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Calf"
+                    placeholder="Enter calf"
+                    {...form.getInputProps("pant.calf")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Hip"
+                    placeholder="Enter hip"
+                    {...form.getInputProps("pant.hip")}
+                  />
+                </SimpleGrid>
+              </Tabs.Panel>
+
+              {/* Paejama Panel */}
+              <Tabs.Panel value="paejama">
+                <SimpleGrid cols={3}>
+                  <MeasurementInput
+                    c="black"
+                    label="Length"
+                    placeholder="Enter length"
+                    {...form.getInputProps("paejama.length")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Hip"
+                    placeholder="Enter hip"
+                    {...form.getInputProps("paejama.hip")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Waist"
+                    placeholder="Enter waist"
+                    {...form.getInputProps("paejama.waist")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Mohri"
+                    placeholder="Enter mohri"
+                    {...form.getInputProps("paejama.mohri")}
+                  />
+                </SimpleGrid>
+              </Tabs.Panel>
+
+              {/* Shalwar Panel */}
+              <Tabs.Panel value="shalwar">
+                <SimpleGrid cols={3}>
+                  <MeasurementInput
+                    c="black"
+                    label="Length"
+                    placeholder="Enter length"
+                    {...form.getInputProps("shalwar.length")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Hip"
+                    placeholder="Enter hip"
+                    {...form.getInputProps("shalwar.hip")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Waist"
+                    placeholder="Enter waist"
+                    {...form.getInputProps("shalwar.waist")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Mohri"
+                    placeholder="Enter mohri"
+                    {...form.getInputProps("shalwar.mohri")}
+                  />
+                </SimpleGrid>
+              </Tabs.Panel>
+
+              {/* Chooridar Paejama Panel */}
+              <Tabs.Panel value="choodidar">
+                <SimpleGrid cols={3}>
+                  <MeasurementInput
+                    c="black"
+                    label="Length"
+                    placeholder="Enter length"
+                    {...form.getInputProps("choodidarPaejama.length")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Hip"
+                    placeholder="Enter hip"
+                    {...form.getInputProps("choodidarPaejama.hip")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Around Knee"
+                    placeholder="Enter around knee"
+                    {...form.getInputProps("choodidarPaejama.aroundKnee")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Around Calf"
+                    placeholder="Enter around calf"
+                    {...form.getInputProps("choodidarPaejama.aroundCalf")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Mohri"
+                    placeholder="Enter mohri"
+                    {...form.getInputProps("choodidarPaejama.mohri")}
+                  />
+                </SimpleGrid>
+              </Tabs.Panel>
+            </Box>
+          </Tabs>
         </Paper>
 
         <Flex justify="end" gap="md">
