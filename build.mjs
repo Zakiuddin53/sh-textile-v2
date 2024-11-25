@@ -25,11 +25,23 @@ export async function build() {
     recursive: true,
   });
 
+  // remove extra files
   await fs.rm(path.join(distDirLocation, "node_modules"), {
     recursive: true,
     force: true,
   });
+
   await fs.rm(path.join(distDirLocation, "package.json"), { force: true });
+
+  // remove process.chDir calls from main/dist/server.js
+  await fs.writeFile(
+    path.join(distDirLocation, "server.js"),
+    await fs
+      .readFile(path.join("main", "dist", "server.js"), "utf-8")
+      .then((content) => content.replace("process.chdir(__dirname)", ""))
+      .then((content) => content.replace("process.chdir(__dirname);", "")),
+    "utf-8"
+  );
 }
 
 build();
