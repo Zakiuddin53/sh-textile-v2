@@ -49,6 +49,7 @@ export class CustomerService {
       sherwani: data.sherwani || Prisma.JsonNull,
       kurta: data.kurta || Prisma.JsonNull,
       coat: data.coat || Prisma.JsonNull,
+      sadri: data.sadri || Prisma.JsonNull,
       trouser: data.trouser || Prisma.JsonNull,
       pant: data.pant || Prisma.JsonNull,
     };

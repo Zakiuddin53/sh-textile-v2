@@ -74,6 +74,16 @@ export interface ShirtMeasurements {
   fullHeight?: string;
 }
 
+export interface SadriMeasurements {
+  length?: string;
+  chest?: string;
+  belowChest?: string;
+  stomach?: string;
+  hip?: string;
+  neck?: string;
+  shoulder?: string;
+}
+
 // Main customer input interface
 export interface CustomerInput {
   name: string;
@@ -86,4 +96,5 @@ export interface CustomerInput {
   coat?: CoatMeasurements;
   pant?: PantMeasurements;
   shirt?: ShirtMeasurements;
+  sadri?: SadriMeasurements;
 }

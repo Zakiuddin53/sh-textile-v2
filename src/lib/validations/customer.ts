@@ -74,6 +74,16 @@ const shirtMeasurementSchema = z.object({
   shoulder: measurementString(),
 });
 
+const sadriMeasurementSchema = z.object({
+  length: measurementString(),
+  chest: measurementString(),
+  belowChest: measurementString(),
+  stomach: measurementString(),
+  hip: measurementString(),
+  neck: measurementString(),
+  shoulder: measurementString(),
+});
+
 export const customerSchema = z.object({
   name: z.string().min(1, "Name is required"),
   orderNumber: z.string().min(1, "Order number is required"),
@@ -85,6 +95,7 @@ export const customerSchema = z.object({
   coat: coatMeasurementSchema.optional().default({}),
   pant: pantMeasurementSchema.optional().default({}),
   shirt: shirtMeasurementSchema.optional().default({}),
+  sadri: sadriMeasurementSchema.optional().default({}),
 });
 
 export type CustomerSchemaType = z.infer<typeof customerSchema>;
