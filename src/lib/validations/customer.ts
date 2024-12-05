@@ -37,9 +37,7 @@ const trouserMeasurementSchema = z.object({
   mohri: measurementString(),
   hip: measurementString(),
   waist: measurementString(),
-  knee: measurementString(),
-  calf: measurementString(),
-  ankle: measurementString(),
+  thigh: measurementString(),
 });
 
 const coatMeasurementSchema = z.object({
@@ -100,6 +98,7 @@ const shalwarMeasurementSchema = z.object({
 
 const choodidarPaejamaMeasurementSchema = z.object({
   length: measurementString(),
+  knee: measurementString(),
   hip: measurementString(),
   aroundKnee: measurementString(),
   aroundCalf: measurementString(),
@@ -112,7 +111,7 @@ const noteMeasurementSchema = z.object({
 
 export const customerSchema = z.object({
   name: z.string().min(1, "Name is required"),
-  orderNumber: z.string().min(1, "Order number is required"),
+  orderNumber: z.number().optional(),
   phone: z.string().min(10, "Valid phone number is required"),
   address: z.string().min(1, "Address is required"),
   sherwani: sherwaniMeasurementSchema.optional().default({}),

@@ -9,14 +9,7 @@ export function Header() {
         <Group justify="space-between" align="center">
           <Link href="/" className="no-underline">
             <Group align="center" gap="sm">
-              <Image
-                src="/logo.jpeg"
-                alt="Sh Textiles Logo"
-                height={50}
-                width={80}
-                priority
-                style={{ width: "60px", height: "50px" }}
-              />
+              <Image src="/logo.jpeg" alt="Sh Textiles Logo" height={50} width={80} priority style={{ width: "60px", height: "50px" }} />
               <div>
                 <Title
                   order={2}
@@ -34,7 +27,7 @@ export function Header() {
                   className="font-medium"
                   style={{
                     fontSize: "0.8rem",
-                    color: "gray.8",
+                    color: "black",
                     marginTop: "-5px",
                   }}
                 >
@@ -46,23 +39,13 @@ export function Header() {
 
           <Group>
             <Link href="/" className="no-underline">
-              <Button
-                variant="light"
-                color="dark"
-                size="md"
-                className="font-medium"
-              >
+              <Button variant="light" color="dark" size="md" className="font-medium">
                 Client Measurement
               </Button>
             </Link>
 
             <Link href="/records" className="no-underline">
-              <Button
-                variant="light"
-                color="dark"
-                size="md"
-                className="font-medium"
-              >
+              <Button variant="light" color="dark" size="md" className="font-medium">
                 Client Records
               </Button>
             </Link>
