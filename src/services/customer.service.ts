@@ -46,12 +46,18 @@ export class CustomerService {
   private static processCustomerData(data: CustomerInput) {
     return {
       ...data,
+      orderNumber: Number(data.orderNumber),
       sherwani: data.sherwani || Prisma.JsonNull,
       kurta: data.kurta || Prisma.JsonNull,
       coat: data.coat || Prisma.JsonNull,
-      sadri: data.sadri || Prisma.JsonNull,
       trouser: data.trouser || Prisma.JsonNull,
       pant: data.pant || Prisma.JsonNull,
+      shirt: data.shirt || Prisma.JsonNull,
+      sadri: data.sadri || Prisma.JsonNull,
+      paejama: data.paejama || Prisma.JsonNull,
+      shalwar: data.shalwar || Prisma.JsonNull,
+      choodidarPaejama: data.choodidarPaejama || Prisma.JsonNull,
+      note: data.note || Prisma.JsonNull,
     };
   }
 }

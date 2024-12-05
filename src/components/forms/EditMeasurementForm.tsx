@@ -19,7 +19,6 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
     validate: zodResolver(customerSchema),
     initialValues: {
       name: customer.name,
-      orderNumber: customer.orderNumber,
       phone: customer.phone,
       address: customer.address,
       sherwani: customer.sherwani || {},
@@ -76,7 +75,6 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
           </Title>
           <SimpleGrid cols={2}>
             <TextInput required label="Name" placeholder="Enter client name" {...form.getInputProps("name")} styles={{ label: { color: "black" } }} />
-            <TextInput required label="Order Number" placeholder="Enter order number" {...form.getInputProps("orderNumber")} styles={{ label: { color: "black" } }} />
             <TextInput required label="Phone" placeholder="Enter phone number" {...form.getInputProps("phone")} styles={{ label: { color: "black" } }} />
             <TextInput required label="Address" placeholder="Enter address" {...form.getInputProps("address")} styles={{ label: { color: "black" } }} />
           </SimpleGrid>

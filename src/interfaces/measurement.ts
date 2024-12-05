@@ -1,7 +1,7 @@
 export interface MeasurementsListProps {
   measurements: {
     id: number;
-    orderNumber: string;
+    orderNumber: number;
     name: string;
     phone: string;
     address: string;

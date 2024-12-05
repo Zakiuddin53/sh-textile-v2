@@ -55,7 +55,7 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                   </Text>
                 </Group>
               </Table.Td>
-              <Table.Td c="dark.9">{customer.orderNumber || "-"}</Table.Td>
+              <Table.Td c="dark.9">{customer.orderNumber}</Table.Td>
             </Table.Tr>
             <Table.Tr>
               <Table.Td>
@@ -92,18 +92,94 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
           </Group>
           <Table striped highlightOnHover withTableBorder withColumnBorders>
             <Table.Tbody>
-              {Object.entries(customer.sherwani || {}).map(([key, value]) => (
-                <Table.Tr key={key}>
-                  <Table.Td>
-                    <Text c="dark.9">
-                      {key.replace(/([A-Z])/g, " $1").trim()}
-                    </Text>
-                  </Table.Td>
-                  <Table.Td>
-                    <Text c="dark.9">{value || "-"}</Text>
-                  </Table.Td>
-                </Table.Tr>
-              ))}
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.length || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Chest</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.chest || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Below Chest</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.blowChest || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Waist</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.waist || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.sleeve || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve Mohri</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.sleeveMohri || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Neck</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.neck || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Shoulder</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.shoulder || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Cap</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.cap || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Full Height</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.fullHeight || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -120,18 +196,92 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
           </Group>
           <Table striped highlightOnHover withTableBorder withColumnBorders>
             <Table.Tbody>
-              {Object.entries(customer.coat || {}).map(([key, value]) => (
-                <Table.Tr key={key}>
-                  <Table.Td>
-                    <Text c="dark.9">
-                      {key.replace(/([A-Z])/g, " $1").trim()}
-                    </Text>
-                  </Table.Td>
-                  <Table.Td>
-                    <Text c="dark.9">{value || "-"}</Text>
-                  </Table.Td>
-                </Table.Tr>
-              ))}
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.length || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Chest</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.chest || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Below Chest</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.blowChest || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Waist</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.waist || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.sleeve || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve Mohri</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.sleeveMohri || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Neck</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.neck || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Shoulder</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.shoulder || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Cap</Text>
+                </Table.Td>
+
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Full Height</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.fullHeight || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -148,18 +298,88 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
           </Group>
           <Table striped highlightOnHover withTableBorder withColumnBorders>
             <Table.Tbody>
-              {Object.entries(customer.kurta || {}).map(([key, value]) => (
-                <Table.Tr key={key}>
-                  <Table.Td>
-                    <Text c="dark.9">
-                      {key.replace(/([A-Z])/g, " $1").trim()}
-                    </Text>
-                  </Table.Td>
-                  <Table.Td>
-                    <Text c="dark.9">{value || "-"}</Text>
-                  </Table.Td>
-                </Table.Tr>
-              ))}
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.kurta?.length || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Chest</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.kurta?.chest || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Below Chest</Text>
+                </Table.Td>
+
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Waist</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.kurta?.waist || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.kurta?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.kurta?.sleeve || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve Mohri</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.kurta?.sleeveMohri || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Neck</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.kurta?.neck || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Shoulder</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.kurta?.shoulder || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Cap</Text>
+                </Table.Td>
+
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Full Height</Text>
+                </Table.Td>
+
+              </Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -176,18 +396,56 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
           </Group>
           <Table striped highlightOnHover withTableBorder withColumnBorders>
             <Table.Tbody>
-              {Object.entries(customer.trouser || {}).map(([key, value]) => (
-                <Table.Tr key={key}>
-                  <Table.Td>
-                    <Text c="dark.9">
-                      {key.replace(/([A-Z])/g, " $1").trim()}
-                    </Text>
-                  </Table.Td>
-                  <Table.Td>
-                    <Text c="dark.9">{value || "-"}</Text>
-                  </Table.Td>
-                </Table.Tr>
-              ))}
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.trouser?.length || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Mohri</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.trouser?.mohri || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.trouser?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Waist</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.trouser?.waist || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Knee</Text>
+                </Table.Td>
+
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Calf</Text>
+                </Table.Td>
+
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Ankle</Text>
+                </Table.Td>
+
+              </Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -204,18 +462,52 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
           </Group>
           <Table striped highlightOnHover withTableBorder withColumnBorders>
             <Table.Tbody>
-              {Object.entries(customer.pant || {}).map(([key, value]) => (
-                <Table.Tr key={key}>
-                  <Table.Td>
-                    <Text c="dark.9">
-                      {key.replace(/([A-Z])/g, " $1").trim()}
-                    </Text>
-                  </Table.Td>
-                  <Table.Td>
-                    <Text c="dark.9">{value || "-"}</Text>
-                  </Table.Td>
-                </Table.Tr>
-              ))}
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.pant?.length || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Waist</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.pant?.waist || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Thigh</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.pant?.thigh || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Bottom</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.pant?.bottom || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Calf</Text>
+                </Table.Td>
+
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.pant?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -232,18 +524,88 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
           </Group>
           <Table striped highlightOnHover withTableBorder withColumnBorders>
             <Table.Tbody>
-              {Object.entries(customer.shirt || {}).map(([key, value]) => (
-                <Table.Tr key={key}>
-                  <Table.Td>
-                    <Text c="dark.9">
-                      {key.replace(/([A-Z])/g, " $1").trim()}
-                    </Text>
-                  </Table.Td>
-                  <Table.Td>
-                    <Text c="dark.9">{value || "-"}</Text>
-                  </Table.Td>
-                </Table.Tr>
-              ))}
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shirt?.length || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Chest</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shirt?.chest || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Below Chest</Text>
+                </Table.Td>
+
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Waist</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shirt?.waist || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shirt?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shirt?.sleeve || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve Mohri</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shirt?.sleeveMohri || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Neck</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shirt?.neck || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Shoulder</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shirt?.shoulder || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Cap</Text>
+                </Table.Td>
+
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Full Height</Text>
+                </Table.Td>
+
+              </Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
