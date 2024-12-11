@@ -37,9 +37,7 @@ const trouserMeasurementSchema = z.object({
   mohri: measurementString(),
   hip: measurementString(),
   waist: measurementString(),
-  knee: measurementString(),
-  calf: measurementString(),
-  ankle: measurementString(),
+  thigh: measurementString(),
 });
 
 const coatMeasurementSchema = z.object({
@@ -100,6 +98,7 @@ const shalwarMeasurementSchema = z.object({
 
 const choodidarPaejamaMeasurementSchema = z.object({
   length: measurementString(),
+  knee: measurementString(),
   hip: measurementString(),
   aroundKnee: measurementString(),
   aroundCalf: measurementString(),
@@ -125,6 +124,10 @@ export const customerSchema = z.object({
   shalwar: shalwarMeasurementSchema.optional().default({}),
   choodidarPaejama: choodidarPaejamaMeasurementSchema.optional().default({}),
   note: noteMeasurementSchema.optional().default({}),
+  orderNumber: z
+    .number()
+    .min(1, "Order number is required")
+    .optional()
 });
 
 export type CustomerSchemaType = z.infer<typeof customerSchema>;

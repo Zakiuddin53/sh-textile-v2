@@ -46,6 +46,7 @@ export class CustomerService {
   private static processCustomerData(data: CustomerInput) {
     return {
       ...data,
+      orderNumber: Number(data.orderNumber),
       sherwani: data.sherwani || Prisma.JsonNull,
       kurta: data.kurta || Prisma.JsonNull,
       coat: data.coat || Prisma.JsonNull,
@@ -56,6 +57,7 @@ export class CustomerService {
       paejama: data.paejama || Prisma.JsonNull,
       choodidarPaejama: data.choodidarPaejama || Prisma.JsonNull,
       shalwar: data.shalwar || Prisma.JsonNull,
+
       note: data.note || Prisma.JsonNull,
     };
   }

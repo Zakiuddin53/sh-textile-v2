@@ -57,9 +57,7 @@ export default function ClientMeasurementForm() {
         mohri: "",
         hip: "",
         waist: "",
-        knee: "",
-        calf: "",
-        ankle: "",
+        thigh: "",
       },
       pant: {
         length: "",
@@ -105,6 +103,7 @@ export default function ClientMeasurementForm() {
         aroundKnee: "",
         aroundCalf: "",
         mohri: "",
+        knee: "",
       },
       note: {
         text: "",
@@ -153,6 +152,7 @@ export default function ClientMeasurementForm() {
           <SimpleGrid cols={2}>
             <TextInput required label="Name" placeholder="Enter client name" {...form.getInputProps("name")} styles={{ label: { color: "black" } }} />
             <TextInput required label="Phone" placeholder="Enter phone number" {...form.getInputProps("phone")} styles={{ label: { color: "black" } }} />
+
             <TextInput required label="Address" placeholder="Enter address" {...form.getInputProps("address")} styles={{ label: { color: "black" } }} />
           </SimpleGrid>
         </Paper>
@@ -280,7 +280,7 @@ export default function ClientMeasurementForm() {
                 Pant
               </Tabs.Tab>
               <Tabs.Tab c="blue" value="paejama" leftSection={<IconHanger size={16} />}>
-                Paejama
+                Pajama
               </Tabs.Tab>
               <Tabs.Tab c="blue" value="shalwar" leftSection={<IconHanger size={16} />}>
                 Shalwar
@@ -295,12 +295,11 @@ export default function ClientMeasurementForm() {
               <Tabs.Panel value="trouser">
                 <SimpleGrid cols={3}>
                   <MeasurementInput c="black" label="Length" placeholder="Enter length" {...form.getInputProps("trouser.length")} />
-                  <MeasurementInput c="black" label="Mohri" placeholder="Enter mohri" {...form.getInputProps("trouser.mohri")} />
                   <MeasurementInput c="black" label="Hip" placeholder="Enter hip" {...form.getInputProps("trouser.hip")} />
                   <MeasurementInput c="black" label="Waist" placeholder="Enter waist" {...form.getInputProps("trouser.waist")} />
-                  <MeasurementInput c="black" label="Knee" placeholder="Enter knee" {...form.getInputProps("trouser.knee")} />
-                  <MeasurementInput c="black" label="Calf" placeholder="Enter calf" {...form.getInputProps("trouser.calf")} />
-                  <MeasurementInput c="black" label="Ankle" placeholder="Enter ankle" {...form.getInputProps("trouser.ankle")} />
+                  <MeasurementInput c="black" label="Thigh" placeholder="Enter thigh" {...form.getInputProps("trouser.thigh")} />
+
+                  <MeasurementInput c="black" label="Mohri" placeholder="Enter mohri" {...form.getInputProps("trouser.mohri")} />
                 </SimpleGrid>
               </Tabs.Panel>
 
@@ -309,9 +308,10 @@ export default function ClientMeasurementForm() {
                 <SimpleGrid cols={3}>
                   <MeasurementInput c="black" label="Length" placeholder="Enter length" {...form.getInputProps("pant.length")} />
                   <MeasurementInput c="black" label="Waist" placeholder="Enter waist" {...form.getInputProps("pant.waist")} />
-                  <MeasurementInput c="black" label="Thigh" placeholder="Enter thigh" {...form.getInputProps("pant.thigh")} />
-                  <MeasurementInput c="black" label="Bottom" placeholder="Enter bottom" {...form.getInputProps("pant.bottom")} />
                   <MeasurementInput c="black" label="Hip" placeholder="Enter hip" {...form.getInputProps("pant.hip")} />
+
+                  <MeasurementInput c="black" label="Thigh" placeholder="Enter thigh" {...form.getInputProps("pant.thigh")} />
+                  <MeasurementInput c="black" label="Mohri" placeholder="Enter mohri" {...form.getInputProps("pant.bottom")} />
                 </SimpleGrid>
               </Tabs.Panel>
 
@@ -339,6 +339,9 @@ export default function ClientMeasurementForm() {
               <Tabs.Panel value="choodidar">
                 <SimpleGrid cols={3}>
                   <MeasurementInput c="black" label="Length" placeholder="Enter length" {...form.getInputProps("choodidarPaejama.length")} />
+                  <MeasurementInput c="black" label="Hip" placeholder="Enter hip" {...form.getInputProps("choodidarPaejama.hip")} />
+                  <MeasurementInput c="black" label="Knee" placeholder="Enter knee" {...form.getInputProps("choodidarPaejama.knee")} />
+
                   <MeasurementInput c="black" label="Hip" placeholder="Enter hip" {...form.getInputProps("choodidarPaejama.hip")} />
                   <MeasurementInput c="black" label="Around Knee" placeholder="Enter around knee" {...form.getInputProps("choodidarPaejama.aroundKnee")} />
                   <MeasurementInput c="black" label="Around Calf" placeholder="Enter around calf" {...form.getInputProps("choodidarPaejama.aroundCalf")} />
