@@ -74,9 +74,29 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
             Client Details
           </Title>
           <SimpleGrid cols={2}>
-            <TextInput required label="Name" placeholder="Enter client name" {...form.getInputProps("name")} styles={{ label: { color: "black" } }} />
-            <TextInput required label="Phone" placeholder="Enter phone number" {...form.getInputProps("phone")} styles={{ label: { color: "black" } }} />
-            <TextInput required label="Address" placeholder="Enter address" {...form.getInputProps("address")} styles={{ label: { color: "black" } }} />
+            <TextInput
+              required
+              label="Name"
+              placeholder="Enter client name"
+              {...form.getInputProps("name")}
+              styles={{ label: { color: "black" } }}
+            />
+
+            <TextInput
+              required
+              label="Phone"
+              placeholder="Enter phone number"
+              {...form.getInputProps("phone")}
+              styles={{ label: { color: "black" } }}
+            />
+            <TextInput
+              required
+              label="Address"
+              placeholder="Enter address"
+              {...form.getInputProps("address")}
+              styles={{ label: { color: "black" } }}
+            />
+
           </SimpleGrid>
         </Paper>
 

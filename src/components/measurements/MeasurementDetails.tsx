@@ -12,7 +12,7 @@ import {
 import { CustomerSchemaType } from "@/lib/validations/customer";
 
 interface MeasurementDetailsProps {
-  customer: CustomerSchemaType & { id: number };
+  customer: CustomerSchemaType & { id: number; orderNumber: number };
 }
 
 export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
@@ -145,7 +145,10 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                   <Text c="dark.9">Sleeve Mohri</Text>
                 </Table.Td>
                 <Table.Td>
-                  <Text c="dark.9">{customer.sherwani?.sleeveMohri || "-"}</Text>
+                  <Text c="dark.9">
+                    {customer.sherwani?.sleeveMohri || "-"}
+                  </Text>
+
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
@@ -622,18 +625,62 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
           </Group>
           <Table striped highlightOnHover withTableBorder withColumnBorders>
             <Table.Tbody>
-              {Object.entries(customer.sadri || {}).map(([key, value]) => (
-                <Table.Tr key={key}>
-                  <Table.Td>
-                    <Text c="dark.9">
-                      {key.replace(/([A-Z])/g, " $1").trim()}
-                    </Text>
-                  </Table.Td>
-                  <Table.Td>
-                    <Text c="dark.9">{value || "-"}</Text>
-                  </Table.Td>
-                </Table.Tr>
-              ))}
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sadri?.length || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Chest</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sadri?.chest || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Below Chest</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sadri?.belowChest || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Stomach</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sadri?.stomach || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sadri?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Neck</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sadri?.neck || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Shoulder</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sadri?.shoulder || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -650,18 +697,38 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
           </Group>
           <Table striped highlightOnHover withTableBorder withColumnBorders>
             <Table.Tbody>
-              {Object.entries(customer.paejama || {}).map(([key, value]) => (
-                <Table.Tr key={key}>
-                  <Table.Td>
-                    <Text c="dark.9">
-                      {key.replace(/([A-Z])/g, " $1").trim()}
-                    </Text>
-                  </Table.Td>
-                  <Table.Td>
-                    <Text c="dark.9">{value || "-"}</Text>
-                  </Table.Td>
-                </Table.Tr>
-              ))}
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.paejama?.length || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.paejama?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Waist</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.paejama?.waist || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Mohri</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.paejama?.mohri || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -678,18 +745,38 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
           </Group>
           <Table striped highlightOnHover withTableBorder withColumnBorders>
             <Table.Tbody>
-              {Object.entries(customer.shalwar || {}).map(([key, value]) => (
-                <Table.Tr key={key}>
-                  <Table.Td>
-                    <Text c="dark.9">
-                      {key.replace(/([A-Z])/g, " $1").trim()}
-                    </Text>
-                  </Table.Td>
-                  <Table.Td>
-                    <Text c="dark.9">{value || "-"}</Text>
-                  </Table.Td>
-                </Table.Tr>
-              ))}
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shalwar?.length || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shalwar?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Waist</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shalwar?.waist || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Mohri</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.shalwar?.mohri || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -706,18 +793,56 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
           </Group>
           <Table striped highlightOnHover withTableBorder withColumnBorders>
             <Table.Tbody>
-              {Object.entries(customer.choodidarPaejama || {}).map(([key, value]) => (
-                <Table.Tr key={key}>
-                  <Table.Td>
-                    <Text c="dark.9">
-                      {key.replace(/([A-Z])/g, " $1").trim()}
-                    </Text>
-                  </Table.Td>
-                  <Table.Td>
-                    <Text c="dark.9">{value || "-"}</Text>
-                  </Table.Td>
-                </Table.Tr>
-              ))}
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">
+                    {customer.choodidarPaejama?.length || "-"}
+                  </Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">
+                    {customer.choodidarPaejama?.hip || "-"}
+                  </Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Around Knee</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">
+                    {customer.choodidarPaejama?.aroundKnee || "-"}
+                  </Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Around Calf</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">
+                    {customer.choodidarPaejama?.aroundCalf || "-"}
+                  </Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Mohri</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">
+                    {customer.choodidarPaejama?.mohri || "-"}
+                  </Text>
+                </Table.Td>
+              </Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -725,3 +850,4 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
     </Grid>
   );
 }
+ 

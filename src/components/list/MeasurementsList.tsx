@@ -50,7 +50,7 @@ export default function MeasurementsList({
             <Table.Tbody>
               {measurements.map((measurement) => (
                 <Table.Tr key={measurement.id}>
-                  <Table.Td c="gray.7">{measurement.orderNumber}</Table.Td>
+                  <Table.Td c="gray.7">#{measurement.orderNumber}</Table.Td>
 
                   <Table.Td c="gray.7">{measurement.name}</Table.Td>
                   <Table.Td c="gray.7">{measurement.phone}</Table.Td>

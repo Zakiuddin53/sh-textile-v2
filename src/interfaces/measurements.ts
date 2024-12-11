@@ -103,7 +103,8 @@ export interface NoteMeasurements {
 
 export interface CustomerInput {
   name: string;
-  orderNumber?: number;
+
+
   phone: string;
   address: string;
   sherwani?: SherwaniMeasurements;
