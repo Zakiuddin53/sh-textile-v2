@@ -111,7 +111,6 @@ export interface NoteMeasurements {
 
 export interface CustomerInput {
   name: string;
-  orderNumber: string;
   phone: string;
   address: string;
   sherwani?: SherwaniMeasurements;

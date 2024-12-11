@@ -15,8 +15,8 @@ datasource db {
 
 model Customer {
   id            Int   @id @default(autoincrement())
+  orderNumber   Int   @default(autoincrement()) @unique
   name          String
-  orderNumber   String
   phone         String
   address       String
   sherwani      Json?    
@@ -30,7 +30,7 @@ model Customer {
   paejama          Json? 
   choodidarPaejama Json? 
   shalwar          Json? 
-  note             Json? 
+  note             Json?
 
 
   createdAt     DateTime @default(now())

@@ -50,8 +50,13 @@ export class CustomerService {
       kurta: data.kurta || Prisma.JsonNull,
       coat: data.coat || Prisma.JsonNull,
       sadri: data.sadri || Prisma.JsonNull,
+      shirt: data.shirt || Prisma.JsonNull,
       trouser: data.trouser || Prisma.JsonNull,
       pant: data.pant || Prisma.JsonNull,
+      paejama: data.paejama || Prisma.JsonNull,
+      choodidarPaejama: data.choodidarPaejama || Prisma.JsonNull,
+      shalwar: data.shalwar || Prisma.JsonNull,
+      note: data.note || Prisma.JsonNull,
     };
   }
 }

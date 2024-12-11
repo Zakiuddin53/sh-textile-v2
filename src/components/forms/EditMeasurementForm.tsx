@@ -30,7 +30,6 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
     validate: zodResolver(customerSchema),
     initialValues: {
       name: customer.name,
-      orderNumber: customer.orderNumber,
       phone: customer.phone,
       address: customer.address,
       sherwani: customer.sherwani || {},
@@ -73,10 +72,8 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
   return (
     <form onSubmit={form.onSubmit(handleSubmit)}>
       <Stack gap="xl">
-
-
-                {/* Notes Section */}
-                <Paper shadow="xs" p="md" withBorder>
+        {/* Notes Section */}
+        <Paper shadow="xs" p="md" withBorder>
           <Title order={4} c="gray.9" mb="md">
             Notes
           </Title>
@@ -100,13 +97,7 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
               {...form.getInputProps("name")}
               styles={{ label: { color: "black" } }}
             />
-            <TextInput
-              required
-              label="Order Number"
-              placeholder="Enter order number"
-              {...form.getInputProps("orderNumber")}
-              styles={{ label: { color: "black" } }}
-            />
+
             <TextInput
               required
               label="Phone"
@@ -123,8 +114,6 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
             />
           </SimpleGrid>
         </Paper>
-
-
 
         {/* Upper Wear Measurements Section */}
         <Paper shadow="xs" p="md" withBorder>
