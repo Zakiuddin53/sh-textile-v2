@@ -27,7 +27,14 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
               Notes
             </Title>
           </Group>
-          <Text mt="md" c="dark.9">
+          <Text
+            mt="md"
+            c="dark.9"
+            style={{
+              whiteSpace: "pre-wrap",
+              fontFamily: "monospace",
+            }}
+          >
             {customer.note?.text || "No additional notes"}
           </Text>
         </Paper>
@@ -148,7 +155,6 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                   <Text c="dark.9">
                     {customer.sherwani?.sleeveMohri || "-"}
                   </Text>
-
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
@@ -275,7 +281,6 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                 <Table.Td>
                   <Text c="dark.9">Cap</Text>
                 </Table.Td>
-
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
@@ -321,7 +326,6 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                 <Table.Td>
                   <Text c="dark.9">Below Chest</Text>
                 </Table.Td>
-
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
@@ -375,13 +379,11 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                 <Table.Td>
                   <Text c="dark.9">Cap</Text>
                 </Table.Td>
-
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
                   <Text c="dark.9">Full Height</Text>
                 </Table.Td>
-
               </Table.Tr>
             </Table.Tbody>
           </Table>
@@ -435,19 +437,16 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                 <Table.Td>
                   <Text c="dark.9">Knee</Text>
                 </Table.Td>
-
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
                   <Text c="dark.9">Calf</Text>
                 </Table.Td>
-
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
                   <Text c="dark.9">Ankle</Text>
                 </Table.Td>
-
               </Table.Tr>
             </Table.Tbody>
           </Table>
@@ -501,7 +500,6 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                 <Table.Td>
                   <Text c="dark.9">Calf</Text>
                 </Table.Td>
-
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
@@ -547,7 +545,6 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                 <Table.Td>
                   <Text c="dark.9">Below Chest</Text>
                 </Table.Td>
-
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
@@ -601,13 +598,11 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                 <Table.Td>
                   <Text c="dark.9">Cap</Text>
                 </Table.Td>
-
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
                   <Text c="dark.9">Full Height</Text>
                 </Table.Td>
-
               </Table.Tr>
             </Table.Tbody>
           </Table>
@@ -850,4 +845,3 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
     </Grid>
   );
 }
- 
