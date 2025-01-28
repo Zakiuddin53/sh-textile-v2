@@ -159,10 +159,42 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
+                  <Text c="dark.9">KB</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.kb || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">KF</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.kf || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
                   <Text c="dark.9">Neck</Text>
                 </Table.Td>
                 <Table.Td>
                   <Text c="dark.9">{customer.sherwani?.neck || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">CB</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.cb || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">CF</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sherwani?.cf || "-"}</Text>
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
@@ -181,14 +213,7 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                   <Text c="dark.9">{customer.sherwani?.cap || "-"}</Text>
                 </Table.Td>
               </Table.Tr>
-              <Table.Tr>
-                <Table.Td>
-                  <Text c="dark.9">Full Height</Text>
-                </Table.Td>
-                <Table.Td>
-                  <Text c="dark.9">{customer.sherwani?.fullHeight || "-"}</Text>
-                </Table.Td>
-              </Table.Tr>
+              <Table.Tr></Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -213,6 +238,7 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                   <Text c="dark.9">{customer.coat?.length || "-"}</Text>
                 </Table.Td>
               </Table.Tr>
+
               <Table.Tr>
                 <Table.Td>
                   <Text c="dark.9">Chest</Text>
@@ -263,10 +289,42 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
+                  <Text c="dark.9">KB</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.kb || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">KF</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.kf || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
                   <Text c="dark.9">Neck</Text>
                 </Table.Td>
                 <Table.Td>
                   <Text c="dark.9">{customer.coat?.neck || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">CB</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.cb || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">CF</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.coat?.cf || "-"}</Text>
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
@@ -282,14 +340,7 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                   <Text c="dark.9">Cap</Text>
                 </Table.Td>
               </Table.Tr>
-              <Table.Tr>
-                <Table.Td>
-                  <Text c="dark.9">Full Height</Text>
-                </Table.Td>
-                <Table.Td>
-                  <Text c="dark.9">{customer.coat?.fullHeight || "-"}</Text>
-                </Table.Td>
-              </Table.Tr>
+              <Table.Tr></Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -322,11 +373,7 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                   <Text c="dark.9">{customer.kurta?.chest || "-"}</Text>
                 </Table.Td>
               </Table.Tr>
-              <Table.Tr>
-                <Table.Td>
-                  <Text c="dark.9">Below Chest</Text>
-                </Table.Td>
-              </Table.Tr>
+
               <Table.Tr>
                 <Table.Td>
                   <Text c="dark.9">Waist</Text>
@@ -375,16 +422,99 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                   <Text c="dark.9">{customer.kurta?.shoulder || "-"}</Text>
                 </Table.Td>
               </Table.Tr>
+
+              <Table.Tr></Table.Tr>
+            </Table.Tbody>
+          </Table>
+        </Paper>
+      </Grid.Col>
+
+      {/* Jubba Measurements */}
+      <Grid.Col span={6}>
+        <Paper p="xl">
+          <Group mb="xl" justify="center">
+            <IconShirt size={20} color="black" />
+            <Title order={2} c="dark.9" fw={600}>
+              Jubba Measurements
+            </Title>
+          </Group>
+          <Table striped highlightOnHover withTableBorder withColumnBorders>
+            <Table.Tbody>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.jubba?.length || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Chest</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.jubba?.chest || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Below Chest</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Waist</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.jubba?.waist || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.jubba?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.jubba?.sleeve || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve Mohri</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.jubba?.sleeveMohri || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Neck</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.jubba?.neck || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Shoulder</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.jubba?.shoulder || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
               <Table.Tr>
                 <Table.Td>
                   <Text c="dark.9">Cap</Text>
                 </Table.Td>
               </Table.Tr>
-              <Table.Tr>
-                <Table.Td>
-                  <Text c="dark.9">Full Height</Text>
-                </Table.Td>
-              </Table.Tr>
+              <Table.Tr></Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -474,6 +604,14 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.pant?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
                   <Text c="dark.9">Waist</Text>
                 </Table.Td>
                 <Table.Td>
@@ -494,19 +632,6 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                 </Table.Td>
                 <Table.Td>
                   <Text c="dark.9">{customer.pant?.bottom || "-"}</Text>
-                </Table.Td>
-              </Table.Tr>
-              <Table.Tr>
-                <Table.Td>
-                  <Text c="dark.9">Calf</Text>
-                </Table.Td>
-              </Table.Tr>
-              <Table.Tr>
-                <Table.Td>
-                  <Text c="dark.9">Hip</Text>
-                </Table.Td>
-                <Table.Td>
-                  <Text c="dark.9">{customer.pant?.hip || "-"}</Text>
                 </Table.Td>
               </Table.Tr>
             </Table.Tbody>
@@ -599,11 +724,98 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
                   <Text c="dark.9">Cap</Text>
                 </Table.Td>
               </Table.Tr>
+              <Table.Tr></Table.Tr>
+            </Table.Tbody>
+          </Table>
+        </Paper>
+      </Grid.Col>
+
+      {/* Apron Measurements */}
+      <Grid.Col span={6}>
+        <Paper p="xl">
+          <Group mb="xl" justify="center">
+            <IconShirt size={20} color="black" />
+            <Title order={2} c="dark.9" fw={600}>
+              Apron Measurements
+            </Title>
+          </Group>
+          <Table striped highlightOnHover withTableBorder withColumnBorders>
+            <Table.Tbody>
               <Table.Tr>
                 <Table.Td>
-                  <Text c="dark.9">Full Height</Text>
+                  <Text c="dark.9">Length</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.apron?.length || "-"}</Text>
                 </Table.Td>
               </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Chest</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.apron?.chest || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Below Chest</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Waist</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.apron?.waist || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.apron?.hip || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.apron?.sleeve || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Sleeve Mohri</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.apron?.sleeveMohri || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Neck</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.apron?.neck || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Shoulder</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.apron?.shoulder || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Cap</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr></Table.Tr>
             </Table.Tbody>
           </Table>
         </Paper>
@@ -630,10 +842,42 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
+                  <Text c="dark.9">KB</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sadri?.kb || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">KF</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sadri?.kf || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
                   <Text c="dark.9">Chest</Text>
                 </Table.Td>
                 <Table.Td>
                   <Text c="dark.9">{customer.sadri?.chest || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">CB</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sadri?.cb || "-"}</Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">CF</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">{customer.sadri?.cf || "-"}</Text>
                 </Table.Td>
               </Table.Tr>
               <Table.Tr>
@@ -800,21 +1044,21 @@ export function MeasurementDetails({ customer }: MeasurementDetailsProps) {
               </Table.Tr>
               <Table.Tr>
                 <Table.Td>
-                  <Text c="dark.9">Hip</Text>
-                </Table.Td>
-                <Table.Td>
-                  <Text c="dark.9">
-                    {customer.choodidarPaejama?.hip || "-"}
-                  </Text>
-                </Table.Td>
-              </Table.Tr>
-              <Table.Tr>
-                <Table.Td>
                   <Text c="dark.9">Around Knee</Text>
                 </Table.Td>
                 <Table.Td>
                   <Text c="dark.9">
                     {customer.choodidarPaejama?.aroundKnee || "-"}
+                  </Text>
+                </Table.Td>
+              </Table.Tr>
+              <Table.Tr>
+                <Table.Td>
+                  <Text c="dark.9">Hip</Text>
+                </Table.Td>
+                <Table.Td>
+                  <Text c="dark.9">
+                    {customer.choodidarPaejama?.hip || "-"}
                   </Text>
                 </Table.Td>
               </Table.Tr>

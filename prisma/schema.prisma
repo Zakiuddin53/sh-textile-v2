@@ -23,7 +23,9 @@ model Customer {
   kurta         Json?    
   coat          Json?   
   sadri         Json?    
-  shirt         Json?   
+  shirt         Json? 
+  jubba         Json? 
+  apron         Json? 
 
   trouser          Json?    
   pant             Json? 

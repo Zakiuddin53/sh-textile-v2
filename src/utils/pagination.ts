@@ -5,21 +5,37 @@ export interface PaginationParams {
 }
 
 export const buildSearchFilter = (search: string) => {
-  const searchFields = ["name", "orderNumber", "phone"] as const;
-  return search
-    ? {
-        OR: searchFields.map((field) => ({
-          [field]: { contains: search, mode: "insensitive" as const },
-        })),
-      }
-    : {};
+  if (!search) return {};
+
+  const searchNumber = parseInt(search);
+  const isNumber = !isNaN(searchNumber);
+
+  return {
+    OR: [
+      {
+        name: {
+          contains: search,
+          mode: "insensitive" as const,
+        },
+      },
+      {
+        phone: {
+          contains: search,
+          mode: "insensitive" as const,
+        },
+      },
+      ...(isNumber
+        ? [
+            {
+              orderNumber: searchNumber,
+            },
+          ]
+        : []),
+    ],
+  };
 };
 
-export const getPaginationParams = ({
-  page = 1,
-  limit = 10,
-  search = "",
-}: PaginationParams) => ({
+export const getPaginationParams = ({ page = 1, limit = 10, search = "" }: PaginationParams) => ({
   skip: (page - 1) * limit,
   take: limit,
   where: buildSearchFilter(search.trim()),

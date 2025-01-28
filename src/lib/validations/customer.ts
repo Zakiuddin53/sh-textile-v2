@@ -19,9 +19,24 @@ const sherwaniMeasurementSchema = z.object({
   shoulder: measurementString(),
   cap: measurementString(),
   fullHeight: measurementString(),
+  kb: measurementString(),
+  kf: measurementString(),
+  cb: measurementString(),
+  cf: measurementString(),
 });
 
 const kurtaMeasurementSchema = z.object({
+  length: measurementString(),
+  chest: measurementString(),
+  waist: measurementString(),
+  hip: measurementString(),
+  sleeve: measurementString(),
+  sleeveMohri: measurementString(),
+  neck: measurementString(),
+  shoulder: measurementString(),
+});
+
+const jubbaMeasurementSchema = z.object({
   length: measurementString(),
   chest: measurementString(),
   waist: measurementString(),
@@ -51,6 +66,10 @@ const coatMeasurementSchema = z.object({
   neck: measurementString(),
   shoulder: measurementString(),
   fullHeight: measurementString(),
+  kb: measurementString(),
+  kf: measurementString(),
+  cb: measurementString(),
+  cf: measurementString(),
 });
 
 const pantMeasurementSchema = z.object({
@@ -72,6 +91,17 @@ const shirtMeasurementSchema = z.object({
   shoulder: measurementString(),
 });
 
+const apronMeasurementSchema = z.object({
+  length: measurementString(),
+  chest: measurementString(),
+  waist: measurementString(),
+  hip: measurementString(),
+  sleeve: measurementString(),
+  sleeveMohri: measurementString(),
+  neck: measurementString(),
+  shoulder: measurementString(),
+});
+
 const sadriMeasurementSchema = z.object({
   length: measurementString(),
   chest: measurementString(),
@@ -80,6 +110,10 @@ const sadriMeasurementSchema = z.object({
   hip: measurementString(),
   neck: measurementString(),
   shoulder: measurementString(),
+  kb: measurementString(),
+  kf: measurementString(),
+  cb: measurementString(),
+  cf: measurementString(),
 });
 
 const paejamaMeasurementSchema = z.object({
@@ -123,11 +157,10 @@ export const customerSchema = z.object({
   paejama: paejamaMeasurementSchema.optional().default({}),
   shalwar: shalwarMeasurementSchema.optional().default({}),
   choodidarPaejama: choodidarPaejamaMeasurementSchema.optional().default({}),
+  jubba: jubbaMeasurementSchema.optional().default({}),
+  apron: apronMeasurementSchema.optional().default({}),
   note: noteMeasurementSchema.optional().default({}),
-  orderNumber: z
-    .number()
-    .min(1, "Order number is required")
-    .optional()
+  orderNumber: z.number().min(1, "Order number is required").optional(),
 });
 
 export type CustomerSchemaType = z.infer<typeof customerSchema>;

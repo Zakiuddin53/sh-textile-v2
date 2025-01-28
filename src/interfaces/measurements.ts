@@ -6,13 +6,28 @@ export interface SherwaniMeasurements {
   hip?: string;
   sleeve?: string;
   sleeveMohri?: string;
+  kb?: string;
+  kf?: string;
   neck?: string;
   shoulder?: string;
   cap?: string;
   fullHeight?: string;
+  cb?: string;
+  cf?: string;
 }
 
 export interface KurtaMeasurements {
+  length?: string;
+  chest?: string;
+  waist?: string;
+  hip?: string;
+  sleeve?: string;
+  sleeveMohri?: string;
+  neck?: string;
+  shoulder?: string;
+}
+
+export interface JubbaMeasurements {
   length?: string;
   chest?: string;
   waist?: string;
@@ -39,7 +54,11 @@ export interface CoatMeasurements {
   hip?: string;
   sleeve?: string;
   sleeveMohri?: string;
+  kb?: string;
+  kf?: string;
   neck?: string;
+  cb?: string;
+  cf?: string;
   shoulder?: string;
   fullHeight?: string;
 }
@@ -63,10 +82,25 @@ export interface ShirtMeasurements {
   shoulder?: string;
 }
 
-export interface SadriMeasurements {
+export interface ApronMeasurements {
   length?: string;
   chest?: string;
+  waist?: string;
+  hip?: string;
+  sleeve?: string;
+  sleeveMohri?: string;
+  neck?: string;
+  shoulder?: string;
+}
+
+export interface SadriMeasurements {
+  length?: string;
+  cb?: string;
+  cf?: string;
+  chest?: string;
   belowChest?: string;
+  kb?: string;
+  kf?: string;
   stomach?: string;
   hip?: string;
   neck?: string;
@@ -103,8 +137,6 @@ export interface NoteMeasurements {
 
 export interface CustomerInput {
   name: string;
-
-
   phone: string;
   address: string;
   sherwani?: SherwaniMeasurements;
@@ -117,5 +149,7 @@ export interface CustomerInput {
   paejama?: PaejamaMeasurements;
   shalwar?: ShalwarMeasurements;
   choodidarPaejama?: ChoodidarPaejamaMeasurements;
+  jubba?: JubbaMeasurements;
+  apron?: ApronMeasurements;
   note?: NoteMeasurements;
 }

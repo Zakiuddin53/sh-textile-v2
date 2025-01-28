@@ -42,6 +42,8 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
       paejama: customer.paejama || {},
       shalwar: customer.shalwar || {},
       choodidarPaejama: customer.choodidarPaejama || {},
+      jubba: customer.jubba || {},
+      apron: customer.apron || {},
       note: customer.note || {},
     },
   });
@@ -142,6 +144,15 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
               >
                 Kurta
               </Tabs.Tab>
+
+              <Tabs.Tab
+                c="blue"
+                value="jubba"
+                leftSection={<IconHanger size={16} />}
+              >
+                Jubba
+              </Tabs.Tab>
+
               <Tabs.Tab
                 c="blue"
                 value="coat"
@@ -155,6 +166,13 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
                 leftSection={<IconJacket size={16} />}
               >
                 Shirt
+              </Tabs.Tab>
+              <Tabs.Tab
+                c="blue"
+                value="apron"
+                leftSection={<IconJacket size={16} />}
+              >
+                Apron
               </Tabs.Tab>
               <Tabs.Tab
                 c="blue"
@@ -213,9 +231,33 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
                   />
                   <MeasurementInput
                     c="black"
+                    label="KB"
+                    placeholder="Enter KB"
+                    {...form.getInputProps("sherwani.kb")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="KF"
+                    placeholder="Enter KF"
+                    {...form.getInputProps("sherwani.kf")}
+                  />
+                  <MeasurementInput
+                    c="black"
                     label="Neck"
                     placeholder="Enter neck"
                     {...form.getInputProps("sherwani.neck")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="CB"
+                    placeholder="Enter CB"
+                    {...form.getInputProps("sherwani.cb")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="CF"
+                    placeholder="Enter CF"
+                    {...form.getInputProps("sherwani.cf")}
                   />
                   <MeasurementInput
                     c="black"
@@ -228,12 +270,6 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
                     label="Cap"
                     placeholder="Enter cap"
                     {...form.getInputProps("sherwani.cap")}
-                  />
-                  <MeasurementInput
-                    c="black"
-                    label="Full Height"
-                    placeholder="Enter full height"
-                    {...form.getInputProps("sherwani.fullHeight")}
                   />
                 </SimpleGrid>
               </Tabs.Panel>
@@ -292,6 +328,60 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
                 </SimpleGrid>
               </Tabs.Panel>
 
+              {/* Jubba Panel */}
+              <Tabs.Panel value="jubba">
+                <SimpleGrid cols={3}>
+                  <MeasurementInput
+                    c="black"
+                    label="Length"
+                    placeholder="Enter length"
+                    {...form.getInputProps("jubba.length")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Chest"
+                    placeholder="Enter chest"
+                    {...form.getInputProps("jubba.chest")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Waist"
+                    placeholder="Enter waist"
+                    {...form.getInputProps("jubba.waist")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Hip"
+                    placeholder="Enter hip"
+                    {...form.getInputProps("jubba.hip")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Sleeve"
+                    placeholder="Enter sleeve"
+                    {...form.getInputProps("jubba.sleeve")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Sleeve Mohri"
+                    placeholder="Enter sleeve mohri"
+                    {...form.getInputProps("jubba.sleeveMohri")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Neck"
+                    placeholder="Enter neck"
+                    {...form.getInputProps("jubba.neck")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Shoulder"
+                    placeholder="Enter shoulder"
+                    {...form.getInputProps("jubba.shoulder")}
+                  />
+                </SimpleGrid>
+              </Tabs.Panel>
+
               {/* Shirt Panel */}
               <Tabs.Panel value="shirt">
                 <SimpleGrid cols={3}>
@@ -346,6 +436,60 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
                 </SimpleGrid>
               </Tabs.Panel>
 
+              {/* Apron Panel */}
+              <Tabs.Panel value="apron">
+                <SimpleGrid cols={3}>
+                  <MeasurementInput
+                    c="black"
+                    label="Length"
+                    placeholder="Enter length"
+                    {...form.getInputProps("apron.length")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Chest"
+                    placeholder="Enter chest"
+                    {...form.getInputProps("apron.chest")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Waist"
+                    placeholder="Enter waist"
+                    {...form.getInputProps("apron.waist")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Hip"
+                    placeholder="Enter hip"
+                    {...form.getInputProps("apron.hip")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Sleeve"
+                    placeholder="Enter sleeve"
+                    {...form.getInputProps("apron.sleeve")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Sleeve Mohri"
+                    placeholder="Enter sleeve mohri"
+                    {...form.getInputProps("apron.sleeveMohri")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Neck"
+                    placeholder="Enter neck"
+                    {...form.getInputProps("apron.neck")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Shoulder"
+                    placeholder="Enter shoulder"
+                    {...form.getInputProps("apron.shoulder")}
+                  />
+                </SimpleGrid>
+              </Tabs.Panel>
+
               {/* Coat Panel */}
               <Tabs.Panel value="coat">
                 <SimpleGrid cols={3}>
@@ -393,21 +537,39 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
                   />
                   <MeasurementInput
                     c="black"
+                    label="KB"
+                    placeholder="Enter KB"
+                    {...form.getInputProps("coat.kb")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="KF"
+                    placeholder="Enter KF"
+                    {...form.getInputProps("coat.kf")}
+                  />
+                  <MeasurementInput
+                    c="black"
                     label="Neck"
                     placeholder="Enter neck"
                     {...form.getInputProps("coat.neck")}
                   />
                   <MeasurementInput
                     c="black"
-                    label="Shoulder"
-                    placeholder="Enter shoulder"
-                    {...form.getInputProps("coat.shoulder")}
+                    label="CB"
+                    placeholder="Enter CB"
+                    {...form.getInputProps("coat.cb")}
                   />
                   <MeasurementInput
                     c="black"
-                    label="Full Height"
-                    placeholder="Enter full height"
-                    {...form.getInputProps("coat.fullHeight")}
+                    label="CF"
+                    placeholder="Enter CF"
+                    {...form.getInputProps("coat.cf")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="Shoulder"
+                    placeholder="Enter shoulder"
+                    {...form.getInputProps("coat.shoulder")}
                   />
                 </SimpleGrid>
               </Tabs.Panel>
@@ -423,6 +585,18 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
                   />
                   <MeasurementInput
                     c="black"
+                    label="KB"
+                    placeholder="Enter KB"
+                    {...form.getInputProps("sadri.kb")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="KF"
+                    placeholder="Enter KF"
+                    {...form.getInputProps("sadri.kf")}
+                  />
+                  <MeasurementInput
+                    c="black"
                     label="Chest"
                     placeholder="Enter chest"
                     {...form.getInputProps("sadri.chest")}
@@ -432,6 +606,18 @@ export function EditMeasurementForm({ customer }: EditMeasurementFormProps) {
                     label="Below Chest"
                     placeholder="Enter below chest"
                     {...form.getInputProps("sadri.belowChest")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="CB"
+                    placeholder="Enter CB"
+                    {...form.getInputProps("sadri.cb")}
+                  />
+                  <MeasurementInput
+                    c="black"
+                    label="CF"
+                    placeholder="Enter CF"
+                    {...form.getInputProps("sadri.cf")}
                   />
                   <MeasurementInput
                     c="black"
